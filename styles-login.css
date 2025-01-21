@@ -1,0 +1,245 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: #262626;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+}
+
+/* Ensure smooth scrolling */
+html {
+    display: grid;
+    font-family: 'Times New Roman', Times, serif;
+    height: 100%;
+    /* Ensure full height */
+    overflow: hidden;
+}
+
+/* Navbar Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 0px 20px;
+}
+
+.nav-left img {
+    height: 70px;
+    width: auto;
+}
+
+.nav-middle ul {
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-middle ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.nav-right a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-right a:hover {
+    border-bottom: red solid 2px;
+}
+
+.nav-middle ul li a:hover {
+    border-bottom: red solid 2px;
+}
+
+/* Show the menu when active class is added */
+.nav-middle ul.active {
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    text-align: center;
+    background-color: black;
+    /* Optional, adjust the background */
+    width: 50%;
+    /* Full width of the screen */
+    position: absolute;
+    /* Position it over other content */
+    margin-top: 4%;
+    /* Align it to the top of the screen */
+    z-index: 10;
+    /* Ensure it's above other content */
+    padding: 5%;
+}
+
+/* Login Page Styles */
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20230703/pngtree-3d-rendered-movie-theatre-with-white-screen-image_3732826.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.login-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-group {
+    text-align: center;
+}
+
+.submit-group button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.submit-group button:hover {
+    background-color: #555;
+}
+
+label {
+    margin-top: 10px;
+}
+
+.forgot-password {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.remember-me input {
+    margin-right: 10px;
+}
+
+.forgot-password a,
+.sign-up {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.forgot-password a:hover,
+.sign-up:hover {
+    text-decoration: underline;
+}
+
+.hamburger-menu {
+    display: contents;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .login-container {
+        padding: 20px;
+    }
+
+    .login-container h2 {
+        font-size: 24px;
+    }
+
+    .input-group input {
+        font-size: 14px;
+    }
+
+    .submit-group button {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .login-container {
+        padding: 15px;
+        width: 75%;
+    }
+
+    .login-container h2 {
+        font-size: 20px;
+    }
+
+    .input-group input {
+        font-size: 12px;
+    }
+
+    .submit-group button {
+        font-size: 14px;
+    }
+
+    .nav-left img {
+        height: 40px;
+    }
+
+    .nav-middle ul {
+        display: none;
+    }
+
+    .nav-right {
+        display: none;
+    }
+
+    /* Toggle hamburger menu on small screen */
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        color: white;
+        font-size: 24px;
+        padding: 10px;
+        background: none;
+        border: none;
+    }
+}

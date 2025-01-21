@@ -1,0 +1,711 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure smooth scrolling */
+html {
+    scroll-behavior: smooth;
+    font-family: 'Times New Roman', Times, serif;
+    display: grid;
+    height: 100%;
+}
+
+/* Body Styles */
+body {
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 0px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 6;
+}
+
+.nav-left img {
+    height: 70px;
+    width: auto;
+}
+
+.nav-middle ul {
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-middle ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-right input {
+    padding: 5px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.nav-right a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.nav-right a:hover {
+    border-bottom: red solid 2px;
+}
+
+.nav-middle ul li a:hover {
+    border-bottom: red solid 2px;
+}
+
+/* Show the menu when active class is added */
+.nav-middle ul.active {
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    text-align: center;
+    background-color: black;
+    /* Optional, adjust the background */
+    width: 50%;
+    /* Full width of the screen */
+    position: absolute;
+    /* Position it over other content */
+    margin-top: 4%;
+    /* Align it to the top of the screen */
+    z-index: 10;
+    /* Ensure it's above other content */
+    padding: 5%;
+}
+
+/* Movie Image Section */
+.movie-header {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+.movie-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.movie-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(50%);
+}
+
+.movie-name-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.cast {
+    margin-right: auto;
+    color: white;
+    margin-left: 10px;
+}
+
+/* Book Now Section */
+.book-now-section {
+    padding: 40px 20px;
+}
+
+.book-now-section h1 {
+    padding: 40px 20px;
+    color: white;
+}
+
+.book-now-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    color: white;
+}
+
+.date-time,
+.cast-seat-selection {
+    width: 50%;
+    /* background-color: white; */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: grid;
+}
+
+.date-time h2,
+.cast-seat-selection h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.date-time select {
+    width: 50%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+
+/* Book Now Button */
+.book-now-btn {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#book-now-btn {
+    background-color: rgb(0 0 0);
+    /* Dark background for buttons */
+    color: white;
+    /* White text for contrast */
+    border: 2px solid gray;
+    /* Subtle border color */
+    padding: 16px 30px;
+    /* Increased padding for larger buttons */
+    font-size: 18px;
+    /* Increased font size for better readability */
+    font-family: 'Times New Roman', Times, serif;
+    /* border-radius: 8px; */
+    /* Smooth button edges */
+    cursor: pointer;
+    /* Indicates interactivity */
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+    /* Smooth transition for hover effects */
+    width: 15%;
+}
+
+#book-now-btn:hover {
+    background-color: rgb(63, 63, 63);
+}
+
+/* Slider Section */
+#home {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(to right,
+            rgba(0, 0, 0, 1) 3%,
+            rgba(0, 0, 0, 0.8) 30%,
+            rgba(0, 0, 0, 0.7) 50%,
+            rgba(0, 0, 0, 0.519) 60%,
+            rgba(0, 0, 0, 0.274) 90%,
+            rgba(0, 0, 0, 0) 100%);
+    z-index: 4;
+}
+
+#slideshow {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease-in-out;
+}
+
+#slideshow img {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* General styles for the slideshow */
+#slideshow .slide {
+    position: relative;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Description styling */
+.description {
+    position: absolute;
+    bottom: 40%;
+    left: 10%;
+    color: rgba(255, 255, 255, 0.744);
+    /* Improved readability */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 5;
+    text-shadow: 5px 5px 5px black;
+    letter-spacing: 0.6px;
+    font-weight: bold;
+    max-width: 500px;
+    /* Limits the width for the paragraph */
+    /* word-wrap: break-word; */
+    /* Ensures text wraps within bounds */
+}
+
+.description h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.description p {
+    font-size: 15px;
+    max-width: 100%;
+    /* Ensure the paragraph can use the full width within the description box */
+    line-height: 1.5;
+    /* Adjust line height for better readability */
+    /* word-wrap: break-word; */
+    /* Ensure long words break properly */
+    /* margin: 0 auto; */
+    /* Center the paragraph within the description box */
+}
+
+/* Footer Styles */
+footer {
+    background-color: black;
+    color: white;
+    font-size: 14px;
+    line-height: 1.6;
+    box-shadow: #222;
+    margin-top: 5%;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-up,
+.footer-middle,
+.footer-right,
+.logo-foot {
+    /* flex: 1; */
+    min-width: 220px;
+    margin: 20px;
+    padding: 10px;
+}
+
+.footer-up h3,
+.footer-middle h3,
+.footer-right h3 {
+    font-size: 150%;
+    margin-bottom: 10px;
+    color: rgb(255 65 65);
+    font-weight: bolder;
+}
+
+.footer-up p {
+    font-size: 100%;
+    color: #ddd;
+}
+
+.footer-middle ul,
+.footer-right ul,
+.social-links {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-middle ul li,
+.footer-right ul li,
+.social-links li {
+    margin-bottom: 10px;
+}
+
+.footer-middle ul li a,
+.footer-right ul li a,
+.social-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 100%;
+    transition: color 0.3s;
+}
+
+.footer-middle ul li a:hover,
+.footer-right ul li a:hover,
+.social-links li a:hover {
+    border-bottom: red solid 2px;
+}
+
+
+
+.footer-bottom {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 100%;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.logo-foot img {
+    height: 50%;
+    width: 50%;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+
+    /* Navbar Adjustments */
+    .nav-middle ul {
+        margin-left: 20px;
+    }
+
+    .nav-middle ul li a {
+        font-size: 16px;
+    }
+
+    .nav-right input {
+        font-size: 14px;
+    }
+
+    .nav-right a {
+        font-size: 14px;
+    }
+
+    /* Slider Adjustments */
+    #home {
+        height: 80vh;
+    }
+
+    .title h1 {
+        font-size: 30px;
+    }
+
+    .title p {
+        font-size: 16px;
+    }
+
+    .title .btn {
+        font-size: 14px;
+        padding: 15px 25px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-left,
+    .footer-middle,
+    .footer-right,
+    .logo-foot {
+        flex: none;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-left p,
+    .footer-middle ul,
+    .footer-right ul,
+    .social-links {
+        font-size: 13px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    /* Navbar Adjustments */
+    .nav-middle ul {
+        flex-direction: column;
+        text-align: center;
+        display: none;
+        /* Hide navbar items by default */
+    }
+
+    .nav-right {
+        display: none;
+        /* Hide nav-right on small screens */
+    }
+
+    .nav-left img {
+        height: 40px;
+    }
+
+    /* Toggle hamburger menu on small screen */
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        color: white;
+        font-size: 24px;
+        padding: 10px;
+    }
+
+    /* Slider Adjustments */
+    #home {
+        height: 60vh;
+    }
+
+    .title h1 {
+        font-size: 25px;
+    }
+
+    .title p {
+        font-size: 14px;
+    }
+
+    .title .btn {
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+
+    /* Adjust description alignment on small screens */
+    .description {
+        bottom: 20%;
+        /* Adjust position as needed */
+        left: 5%;
+        /* Align closer to the left */
+        text-align: left;
+        /* Align text to the left */
+        padding: 10px;
+        /* Reduce padding for smaller screens */
+    }
+
+    .description h2 {
+        font-size: 20px;
+        /* Smaller font for heading */
+    }
+
+    .description p {
+        font-size: 12px;
+        /* Smaller font for paragraph */
+    }
+
+    #book-now-btn {
+        width: 50%;
+    }
+
+    .footer-container {
+        padding: 0 10px;
+    }
+
+    .footer-left h3,
+    .footer-middle h3,
+    .footer-right h3 {
+        font-size: 16px;
+    }
+
+    .footer-middle ul li,
+    .footer-right ul li {
+        font-size: 12px;
+    }
+
+    .footer-bottom {
+        padding: 15px;
+        font-size: 10px;
+    }
+
+
+}
+
+/* Buttons for smaller screens */
+@media (max-width: 768px) {
+    #book-now-btn {
+        padding: 14px 25px;
+        /* Slightly reduce padding for smaller screens */
+        font-size: 16px;
+        /* Adjust font size */
+    }
+
+    .book-now-btn {
+        gap: 20px;
+        /* Reduce space between buttons */
+        flex-wrap: wrap;
+        /* Wrap buttons to the next line if needed */
+    }
+
+    #book-now-btn {
+        width: 50%;
+    }
+}
+
+/* Buttons for very small screens */
+@media (max-width: 480px) {
+    #book-now-btn {
+        width: 100%;
+        /* Make buttons take full width */
+        padding: 12px 20px;
+        /* Adjust padding */
+        font-size: 16px;
+        /* Further reduce font size */
+    }
+
+    .book-now-btn {
+        flex-direction: column;
+        /* Stack buttons vertically */
+        gap: 15px;
+        /* Space between stacked buttons */
+    }
+
+
+}
+
+/* Seating Grid */
+.seating-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    position: relative;
+    /* right: 22%; */
+    color: white;
+    margin-left: auto;
+}
+
+/* Row Layout */
+.row {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+/* Seat Styling */
+.seat {
+    background-color: #ff4c4c;
+    /* Default red seat color */
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover and Selected States */
+.seat:hover {
+    background-color: #ff7b7b;
+    /* Lighter red on hover */
+    transform: scale(1.1);
+}
+
+.seat.selected {
+    background-color: #008000;
+    /* Green for selected seats */
+}
+
+/* Media Queries for Responsiveness */
+
+/* For small screens (mobile) */
+@media (max-width: 480px) {
+    .seating-container {
+        right: 0;
+        /* Center the seating container on mobile */
+    }
+
+    .seat {
+        width: 30px;
+        /* Smaller seat size on mobile */
+        height: 30px;
+        margin: 4px;
+        /* Less margin between seats */
+    }
+
+    .row {
+        flex-wrap: wrap;
+        /* Allow rows to wrap to the next line */
+        justify-content: flex-start;
+        /* Align seats to the left */
+    }
+}
+
+/* For tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+    .seating-container {
+        right: 10%;
+        /* Slightly shift container on tablets */
+    }
+
+    .seat {
+        width: 35px;
+        /* Slightly smaller seat size on tablets */
+        height: 35px;
+        margin: 4px;
+        /* Reduce margin */
+    }
+
+    .row {
+        justify-content: space-between;
+        /* Distribute seats evenly in rows */
+    }
+}
+
+/* For large screens (desktops) */
+@media (min-width: 769px) {
+    .seating-container {
+        right: 22%;
+        /* Original positioning on larger screens */
+    }
+
+    .seat {
+        width: 40px;
+        /* Standard seat size */
+        height: 40px;
+        margin: 5px;
+        /* Standard margin */
+    }
+
+    .row {
+        justify-content: center;
+        /* Center the seats in the row */
+    }
+}
+
+#payment {
+    color: #ff0000;
+    /* Red for caution */
+    font-weight: bold;
+    font-size: 90%;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ff0000;
+    /* Light red background */
+    border-radius: 5px;
+    text-align: center;
+    /* Center align the text */
+    width: 50%;
+}
