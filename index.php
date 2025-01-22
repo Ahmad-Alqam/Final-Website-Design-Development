@@ -11,7 +11,7 @@
     <meta name="description"
         content="NightScreen Cinema: Experience the ultimate movie-watching experience with our diverse film selection, immersive technology, and cozy atmosphere.">
     <meta name="keywords"
-        content="cinema, movies, now showing, coming soon, NightScreen Cinema, film, booking, IMAX, theaters">
+        content="night screen, nightscreen, cinema, movies, now showing, coming soon, NightScreen Cinema, film, booking, IMAX, theaters">
     <meta name="author" content="NightScreen Cinema">
     <!--font awesom integration-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
