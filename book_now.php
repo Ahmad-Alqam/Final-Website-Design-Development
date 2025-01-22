@@ -19,7 +19,13 @@ session_start(); // Ensure the session is started
 
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Get form input
+     // Get form input
+    $user_id = $_SESSION['privilleged'] ?? null;
+    if (!$user_id) {
+        // Redirect to login page if not signed in
+        header("Location: login.php");
+        exit();
+    } 
     $user_id = isset($_SESSION['privilleged']) ?? null;
     $film_id = $_POST['film_id'] ?? null;
     $movie_date = $_POST['movie-date'] ?? null;
