@@ -51,12 +51,12 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentBookingId;  // Variable to store the current booking ID being edited
 
     editButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            currentBookingId = e.target.dataset.id;  // Get the booking ID
-            console.log('Editing booking with ID:', currentBookingId);
+        button.addEventListener('click', () => {
+            // currentBookingId = e.target.dataset.id;  // Get the booking ID
+            // console.log('Editing booking with ID:', currentBookingId);
 
             // Open the modal 
-            // document.getElementById('edit-booking-id').value = currentBookingId;
+            document.getElementById('edit-booking-id').value = currentBookingId;
             editModal.style.display = 'block';
         });
     });
