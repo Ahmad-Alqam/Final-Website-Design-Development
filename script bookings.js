@@ -41,6 +41,7 @@ seats.forEach((seat) => {
 
     });
 });
+//edit modal
 document.addEventListener('DOMContentLoaded', function () {
     // Get modal elements
     const editModal = document.getElementById('edit-modal');
@@ -49,32 +50,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let currentBookingId;  // Variable to store the current booking ID being edited
 
-    // Add event listener to open the modal
     editButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             currentBookingId = e.target.dataset.id;  // Get the booking ID
             console.log('Editing booking with ID:', currentBookingId);
 
-            // Open the modal (set booking ID in hidden input field)
-            document.getElementById('edit-booking-id').value = currentBookingId;
+            // Open the modal 
+            // document.getElementById('edit-booking-id').value = currentBookingId;
             editModal.style.display = 'block';
         });
     });
 
-    // Add event listener to close the modal
-    closeModalButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            editModal.style.display = 'none';
-        });
-    });
-
-    // Close the modal if clicked outside the modal content
-    window.addEventListener('click', (event) => {
-        if (event.target === editModal) {
-            editModal.style.display = 'none';
-        }
-    });
 });
+
+function closeEditModal() {
+    document.getElementById("edit-modal").style.display = "none";
+}
 
 document.getElementById("save").addEventListener("click", function () {
     const movieDate = document.getElementById("movie-date").value.trim(); // Get and trim the show date
