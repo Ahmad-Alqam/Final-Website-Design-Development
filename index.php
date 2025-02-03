@@ -23,7 +23,7 @@
 <header>
     <nav>
         <div class="nav-left">
-            <img src="Assets/img/logo/Website_Logo.png" alt="Logo"> <!-- Replace with your logo image -->
+            <img src="Assets/img/logo/Website_Logo.png" alt="Logo">
         </div>
         <div class="nav-middle">
             <ul>
