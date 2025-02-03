@@ -16,7 +16,7 @@ if ($movieName) {
 
 session_start(); // Ensure the session is started
 // Initialize variables
-
+$bookingSuccess = false;
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      // Get form input
@@ -44,6 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'movie_date' => $movie_date,
                 'seat' => $seat
             ]);
+    $bookingSuccess = true;
     }
 
 ?>
